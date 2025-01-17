@@ -3,7 +3,7 @@ from django import forms
 from . import models
 
 
-class BrandCreateForm(forms.ModelForm):
+class BrandForm(forms.ModelForm):
 
     class Meta:
         model = models.Brand
