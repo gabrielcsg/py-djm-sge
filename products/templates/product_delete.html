@@ -4,18 +4,18 @@
 
 <div class="container mt-4">
   <h3 class="display-6">
-    Deletar Fornecedor
+    Deletar Produto
   </h3>
 
   <div class="card">
     <div class="card-body">
       <p class="card-text">
-        Tem certeza que deseja excluir o fornecedor <strong>"{{ supplier.name }}"</strong>?
+        Tem certeza que deseja excluir o produto <strong>"{{ product.title }}"</strong>?
       </p>
       <form method="post" class="form">
         {% csrf_token %}
         <button type="submit" class="btn btn-danger">Deletar</button>
-        <a href="{% url 'supplier_list' %}" class="btn btn-secondary">Cancelar e voltar para lista de fornecedores</a>
+        <a href="{% url 'product_list' %}" class="btn btn-secondary">Cancelar e voltar para lista de produtos</a>
       </form>
     </div>
   </div>
