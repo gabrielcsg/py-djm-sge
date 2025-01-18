@@ -1,3 +1,9 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Outflow
+
+
+@admin.register(Outflow)
+class OutflowAdmin(admin.ModelAdmin):
+    list_display = ('product', 'quantity', 'created_at', 'created_at',)
+    search_fields = ('product__name',)
