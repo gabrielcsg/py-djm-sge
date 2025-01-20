@@ -5,9 +5,9 @@
       <div class="col-md-3">
         <div class="card bg-primary">
           <div class="card-body">
-            <h5 class="card-title">Quantidade de Produtos</h5>
+            <h5 class="card-title">Quantidade de Vendas</h5>
             <p class="card-text text-white font-weight-bold display-6">
-              {{ product_metrics.total_quantity|default:0 }}
+              {{ sales_metrics.total_sales|default:0 }}
             </p>
           </div>
         </div>
@@ -16,9 +16,9 @@
       <div class="col-md-3">
         <div class="card bg-danger">
           <div class="card-body">
-            <h5 class="card-title">Custo do Estoque</h5>
+            <h5 class="card-title">Produtos Vendidos</h5>
             <p class="card-text text-white font-weight-bold display-6">
-              R$ {{ product_metrics.total_cost_price }}
+              {{ sales_metrics.total_products_sold|default:0 }}
             </p>
           </div>
         </div>
@@ -26,9 +26,9 @@
       <div class="col-md-3">
         <div class="card bg-success">
           <div class="card-body">
-            <h5 class="card-title">Valor do Estoque</h5>
+            <h5 class="card-title">Valor das Vendas</h5>
             <p class="card-text text-white font-weight-bold display-6">
-              R$ {{ product_metrics.total_selling_price }}
+              R$ {{ sales_metrics.total_sales_value }}
             </p>
           </div>
         </div>
@@ -36,9 +36,9 @@
       <div class="col-md-3">
         <div class="card bg-warning">
           <div class="card-body">
-            <h5 class="card-title">Lucro do Estoque</h5>
+            <h5 class="card-title">Lucro das Vendas</h5>
             <p class="card-text text-white font-weight-bold display-6">
-              R$ {{ product_metrics.total_profit }}
+              R$ {{ sales_metrics.total_sales_profit }}
             </p>
           </div>
         </div>
