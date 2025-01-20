@@ -7,7 +7,7 @@
           <div class="card-body">
             <h5 class="card-title">Total Produtos</h5>
             <p class="card-text text-white font-weight-bold display-6">
-              {{ product_metrics.total_quantity }}
+              {{ product_metrics.total_quantity|default:0 }}
             </p>
           </div>
         </div>
