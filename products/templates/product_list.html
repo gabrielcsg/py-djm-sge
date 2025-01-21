@@ -6,7 +6,9 @@ SGE - Produtos
 
 {% block content %}
 
+{% if perms.products.view_product and perms.inflows.view_inflow %}
 {% include 'components/_product_metrics.html' %}
+{% endif %}
 
 <div class="row mb-3 mt-3">
   <div class="col-md-6">
@@ -22,11 +24,13 @@ SGE - Produtos
     </form>
   </div>
 
+  {% if perms.products.add_product %}
   <div class="col-md-6">
     <a href="{% url 'product_create' %}" class="btn btn-success float-end">
       <i class="bi bi-plus"></i> Novo Produto
     </a>
   </div>
+  {% endif %}
 </div>
 
 <div class="row mb-3">
@@ -89,13 +93,16 @@ SGE - Produtos
           <a href="{% url 'product_detail' product.id %}" class="btn btn-info">
             <i class="bi bi-eye"></i>
           </a>
+          {% if perms.products.change_product %}
           <a href="{% url 'product_update' product.id %}" class="btn btn-warning">
             <i class="bi bi-pencil-square"></i>
           </a>
-
+          {% endif %}
+          {% if perms.products.delete_product %}
           <a href="{% url 'product_delete' product.id %}" class="btn btn-danger">
             <i class="bi bi-trash"></i>
           </a>
+          {% endif %}
         </td>
       </tr>
       {% endfor %}

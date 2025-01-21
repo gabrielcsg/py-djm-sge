@@ -18,11 +18,13 @@ SGE - Categorias
     </form>
   </div>
 
+  {% if perms.categories.add_category %}
   <div class="col-md-6">
     <a href="{% url 'category_create' %}" class="btn btn-success float-end">
       <i class="bi bi-plus"></i> Nova Categoria
     </a>
   </div>
+  {% endif %}
 </div>
 
 <div class="table-responsive">
@@ -45,13 +47,16 @@ SGE - Categorias
           <a href="{% url 'category_detail' category.id %}" class="btn btn-info">
             <i class="bi bi-eye"></i>
           </a>
+          {% if perms.categories.change_category %}
           <a href="{% url 'category_update' category.id %}" class="btn btn-warning">
             <i class="bi bi-pencil-square"></i>
           </a>
-
+          {% endif %}
+          {% if perms.categories.delete_category %}
           <a href="{% url 'category_delete' category.id %}" class="btn btn-danger">
             <i class="bi bi-trash"></i>
           </a>
+          {% endif %}
         </td>
       </tr>
       {% endfor %}
